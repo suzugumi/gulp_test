@@ -1,11 +1,18 @@
-function dispTotal(x, y){
-    return x + y;
-  }
+// function dispTotal(x, y){
+//     return x + y;
+//   }
   
-  console.log(dispTotal(3, 4));
+//   console.log(dispTotal(3, 4));
 
-  function zikosyoukai(a,b){
-   return "こんにちは" + a +"よろしく" + b
-  }
+//   function zikosyoukai(a,b){
+//    return "こんにちは" + a +"よろしく" + b
+//   }
 
-  console.log(zikosyoukai('ともや','たかかず'))
+//   console.log(zikosyoukai('ともや','たかかず'))
+
+
+var fs = require('fs')
+
+fs.watch('index.js', function(event, filename) {
+  console.log(event + ' to ' + filename)
+})

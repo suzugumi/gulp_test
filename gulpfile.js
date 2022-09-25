@@ -1,9 +1,106 @@
-const { gulp ,  task  , src, dest , series , watch , parallel } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
+const { gulp ,  task  , src, dest , series  ,   watch   , parallel } = require('gulp');
+// const sass = require('gulp-sass')(require('sass'));
+const sass = require('gulp-dart-sass');//Dart Sass はSass公式が推奨 @use構文などが使える
 const browserSync = require('browser-sync').create();
+const plumber = require("gulp-plumber"); // エラーが発生しても強制終了させない
+const notify = require("gulp-notify"); // エラー発生時のアラート出力
+const chokidar = require('chokidar');
+const fs = require('fs');
+
+
+const src_P= {scss :'src/css/*.scss', };
+const dest_P =  {css :'src/css/', src: './src/',};
 
 
 
+fs.watch('index.js', function(event, filename) {
+  console.log(event + ' to ' + filename)
+})
+
+// chokidarの初期化
+// var watcher = chokidar.watch('./src/css/*.scss',{
+//     ignored:/[\/\\]\./,
+//     persistent:true
+// });
+
+// //イベント定義
+// chokidar.watch('./src/css/*.scss').on('ready',function(path,event){
+//     //準備完了
+//     console.log(event +"ready watching...");
+//     Sass()
+//     //ファイルの追加
+//     watcher.on('add',function(path){
+//         console.log(path + " added.");
+//     });
+
+//     //ファイルの編集
+//     watcher.on('change',function(path){
+//       Sass()
+//         console.log(path + " changed.");
+//         uploadFile();
+//     });
+// });
+
+
+
+
+
+// const sartch = fs.watch(src_P.scss,Sass, (eventType, filename) => {
+//   console.log(`event type is: ${eventType}`);
+//   if (filename) {
+//     console.log(`filename provided: ${filename}`);
+//   } else {
+//     console.log('filename not provided');
+//   }
+// });
+
+// const Sass = (cb) => {
+//       src(src_P.scss,{
+//         sourcemaps: true
+//     })
+//     .pipe( 
+//         plumber({        errorHandler: notify.onError('Error:<%= error.message %>') 
+//     }))
+//     .pipe(sass({outputStyle: 'expanded'}))
+//     .pipe(dest( dest_P.css,{sourcemaps: './'}))
+//     .pipe(browserSync.stream())
+//     .pipe(notify({
+//         message: 'Sassをコンパイルしました',
+//       onLast: true
+//     }))
+//     cb();
+// }
+
+// const checker = ()=> {chokidar.watch('./src/css/*.scss').on('all', (event, path) => {
+//     if(path === src_P.scss){
+//     Sass()
+//     }
+// });
+// }
+
+
+
+const Sass = (cb) =>{
+    src(src_P.scss)
+   .pipe(sass())
+  .pipe(dest(dest_P.css))
+  }
+  
+
+ const watching = ()  => {watch('./src/css/*.css', series(Sass)); }
+
+ exports.test = series(parallel(Sass,watching));
+
+
+
+// exports.test = series(parallel(checker));
+
+
+
+// exports.test2  = series(
+    
+//     parallel(watching)
+//    );
 // const browser_sync = ()=> {
 //     browserSync({
 //       server: {

@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["style.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA","file":"style.css","sourcesContent":["h1{\r\n    margin: auto;\r\n    padding: auto;\r\n    background: red;\r\n}"]}
