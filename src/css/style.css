@@ -1,8 +1,14 @@
-h1 {
-  padding: auto;
-  background: red;
+@charset "UTF-8";
+body {
+  font-family: "メイリオ", Verdana, sans-serif;
+  background: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-p {
+.red {
   color: red;
 }
+/*# sourceMappingURL=style.css.map */
