@@ -1,0 +1,79 @@
+.height115px {
+  padding-bottom: 55px;
+  background: red;
+}
+
+.header_sub {
+  width: 100%;
+  background: darkslategray;
+  height: 60px;
+  transition: 0.8s;
+}
+
+#header {
+  background: pink;
+  width: 100%;
+  height: 80px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.hedar_logo {
+  background: url("../images/dbd_logoMin.png");
+  background-size: cover;
+  width: 100px;
+  height: 80px;
+  float: left;
+  margin-left: 10px;
+  opacity: 0.8;
+  left: 0;
+  position: absolute;
+  margin-top: 5px;
+}
+
+header nav {
+  background-color: greenyellow;
+  float: right;
+  width: 60%;
+  height: 100%;
+  opacity: 0.3;
+}
+
+header .header_nav a {
+  color: white;
+  text-decoration: none;
+}
+
+ul.header_nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+ul.header_nav li {
+  font-size: 18px;
+  background: red;
+  flex-basis: 16%;
+  margin-top: 10px;
+}
+
+.button_language {
+  background: blue;
+  float: right;
+  width: 5%;
+  height: 100%;
+  border: none;
+  right: 500px;
+}
+
+.button_play {
+  background: red;
+  width: 15%;
+  height: 100%;
+  border: none;
+}
+/*# sourceMappingURL=header.css.map */

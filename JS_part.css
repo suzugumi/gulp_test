@@ -1,0 +1,25 @@
+.NONE {
+  display: none;
+}
+
+.HIDDEN {
+  visibility: hidden;
+}
+
+.Revival {
+  visibility: visible;
+}
+
+.Link {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.Z-index {
+  z-index: -999;
+}
+/*# sourceMappingURL=JS_part.css.map */

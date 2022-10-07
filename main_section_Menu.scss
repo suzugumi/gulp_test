@@ -1,0 +1,128 @@
+
+  
+  .main_menu_container{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: blue;
+    z-index: 1;
+  }
+  
+  .main_container{
+    width: 100%;
+    height: 1100px;
+    position: absolute;
+    z-index: 0;
+  }
+  
+.main_menu1_container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    background-color: yellow;
+}
+.menu1_aria{
+    width: 60%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+        background: black;
+
+}
+
+
+ul.main_menus1{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    font-size: 28px;
+    list-style: none;
+    margin: 0 auto;
+    background: black;
+}
+
+ul.main_menus1 li{
+    flex-basis:10%;
+
+}
+ul.main_menus1 li:nth-child(2){
+    margin-right: 2%;
+
+}
+// ul.main_icons {
+//     display: flex;
+//     flex-flow: row wrap;
+//     justify-content:center;
+//     font-size: 28px;
+//     list-style: none;
+// }
+
+// ul.main_icons li{
+//     margin-left: 10px;
+
+// }
+
+
+
+.menu2_aria{
+    position:absolute;
+    width: 100%;
+    height: 50%;
+    background: green;
+
+}
+
+
+
+ul.main_menus2{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:space-between;
+    font-size: 28px;
+    list-style: none;
+}
+
+ul.main_menus2 li:nth-child(1){
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    left:0;
+    background: red;
+   
+}
+
+ul.main_menus2 li:nth-child(2){
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    right:0;
+    background: red;
+   
+}
+
+ul.main_menus2 button{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+.menu_platform_aria{
+    position: absolute;
+    bottom: 0;;
+    width: 100%;
+    height: 40%;
+    background: blue;
+}
+
+ul.menu_platforms{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    list-style: none;
+}

@@ -1,0 +1,18 @@
+@charset "UTF-8";
+body {
+  font-family: "メイリオ", Verdana, sans-serif;
+  background: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.red {
+  color: red;
+}
+
+.background_Red {
+  background: red;
+}
+/*# sourceMappingURL=style.css.map */
