@@ -45,7 +45,7 @@ header .header_nav a {
   text-decoration: none;
 }
 
-.header_nav {
+ul.header_nav {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -54,11 +54,10 @@ header .header_nav a {
   text-align: center;
 }
 
-.header_nav li {
+ul.header_nav li {
   font-size: 18px;
   background: red;
   flex-basis: 16%;
-  align-items: center;
   margin-top: 10px;
 }
 
@@ -73,7 +72,6 @@ header .header_nav a {
 
 .button_play {
   background: red;
-  float: right;
   width: 15%;
   height: 100%;
   border: none;
