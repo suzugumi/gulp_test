@@ -4,6 +4,9 @@ let $MAIN_SLID_ARIA = document.getElementById('MAIN_SLID_ARIA');
 let $main_Aria = document.getElementById('main_Aria');
 let $MAIN_DELETE = document.getElementById('MAIN_DELETE');
 let $hedar_SUB = document.getElementById('hedar_SUB');
+let $TEST = document.getElementById('TEST');
+let $target_Platformmenus = document.getElementById('target_Platformmenus');
+let $target_efect1 = document.getElementById('target_efect1');
 let $slidshow_IDs = {
     1: document.getElementById('SLID_SHOW1'), 
     2: document.getElementById('SLID_SHOW2'),
@@ -14,32 +17,43 @@ let $slidshow_IDs = {
 let count = 1;
 let slid_count =0;
 
-	// window.addEventListener('scroll', function () {
-	// 	let $taeget_position  = document.querySelector('#scroll_target').getBoundingClientRect().top;
-    //     let Ypotision = this.scrollY;
-
-
-	// 	// ターゲットの画面トップからの距離
-    //     console.log(Ypotision);
-
-	// 	// 画面トップからの距離から画面の高さより小さければ実行する
-	// 		if ($taeget_position < Ypotision) {
-    //             $hedar_SUB.classList.add('height115px');
-	// 		}else {
-    //             $hedar_SUB.classList.remove('height115px');
-    //         }
-	// });
-
-
 // window.addEventListener('scroll', function(Y){
-//     // if($hedar_SUB === window.scrollY())
-//     console.log(Y)
+
+//     let tatget_top =$target_Platformmenus.getBoundingClientRect().top
+//     console.log( tatget_top);  
+
 // })
+
+const test_menu_action = function(){  
+    let $elm = document.querySelectorAll('#target_Platformmenus li');
+    $elm.forEach(item => item.classList.add("scale-in-ver-center"))
+}
+
+
+
+window.addEventListener('scroll', (a)=>{ 
+    let $target_heigtUp = document.getElementById('heigt_up');
+
+    let $elm = document.querySelectorAll('#target_Platformmenus li');
+        let target = $target_efect1 .getBoundingClientRect()
+        let target_top = target.top
+
+       if(this.scrollY  > target_top ) {
+        $elm.forEach(item => item.classList.add("scale-in-ver-center","blink-2"))
+        $target_heigtUp.style.height = '53%';
+    }else if(this.scrollY < target_top ){
+        $elm.forEach(item => item.classList.remove("scale-in-ver-center","blink-2"))
+        $target_heigtUp.style.height = '50%';
+    }
+    
+    
+},false);
+
 
 
 const slidshow_CountUp = ()  => {
     slid_count  ++;
-    console.log(slid_count );
+    // console.log(slid_count );
 
 };
 
@@ -74,8 +88,6 @@ const create_main = function(){
             switch(slid_count){
                 case 5:
             document.getElementById('SLID_SHOW1').classList.add('text-blur-out','vibrate-1');
-
-
             break;
                 case 10:
             document.getElementById('SLID_SHOW2').classList.add('text-blur-out');
