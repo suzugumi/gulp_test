@@ -1,8 +1,304 @@
+@charset "UTF-8";
 .section_container01 {
-  background: orange;
+  background: url("../images/section01_backgroundMin.jpeg");
+  background-size: cover;
   width: 100%;
-  height: 1000px;
+  height: 1300px;
   position: relative;
+  background-attachment: fixed;
   z-index: 0;
+}
+
+.section_container01_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: black;
+  opacity: 0.8;
+}
+
+.separate_Introduction_wraaper {
+  position: relative;
+  width: 100%;
+  height: 20%;
+  background: yellow;
+  opacity: 0.3;
+}
+
+.separate_aria_survivor_Introduction {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 20%;
+  background: dodgerblue;
+  transform: translate(2%, 0);
+}
+
+.separate_aria_killer_Introduction {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 20%;
+  background: brown;
+  transform: translate(-2%, 0);
+}
+
+.separate_aria_killer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 80%;
+  background: red;
+  transform: translate(-2%, 0);
+}
+
+.killer_A {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 47%;
+  height: 75%;
+  background: yellow;
+  border: solid 1px #ccc;
+  overflow: hidden;
+}
+
+img.pig {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 100%;
+  transform: scale(1.3);
+  z-index: 1;
+}
+
+img.saw_logo {
+  position: absolute;
+  top: 280px;
+  left: 25%;
+  right: 25%;
+  width: 60%;
+  z-index: 2;
+}
+
+.pig_background {
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVtXIbCuUAc5vvJZ1u2xKllSLGqI4tthwyhA&usqp=CAU) center no-repeat;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  transition: 0.8s;
+}
+
+.pig_background::before {
+  content: "";
+  /* ↓暗いオーバーレイを半透明で配置 */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* ↓全体を覆うように配置 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+}
+
+.killer_B {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 47%;
+  height: 75%;
+  background: yellow;
+  border: solid 1px #ccc;
+  margin-left: 3%;
+  overflow: hidden;
+}
+
+.sadako_background {
+  background: url(https://deadbydaylight.com/static/793af8e13457337f8137e1c5123d5f98/54ac6/raccooncity_realm_policestation_map2_f2dccbd529.webp) center no-repeat;
+  position: relative;
+  width: 500%;
+  height: 200%;
+  background-position: center;
+  background-size: cover;
+  transition: 0.8s;
+}
+
+.sadako_background::before {
+  content: "";
+  /* ↓暗いオーバーレイを半透明で配置 */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* ↓全体を覆うように配置 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+}
+
+img.sadako {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 100%;
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+img.sadako_logo {
+  position: absolute;
+  top: 290px;
+  right: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.separate_aria_survivor {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 80%;
+  transform: translate(2%, 0);
+  background: blue;
+  overflow-x: hidden;
+  transition: 0.4s;
+}
+
+.survivor_A {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 47%;
+  height: 75%;
+  background: yellow;
+  border: solid 1px #ccc;
+  overflow: hidden;
+}
+
+.leon_background {
+  background: url(https://pbs.twimg.com/media/FZQseuvaIAAy6X0.jpg) center no-repeat;
+  position: relative;
+  width: 500%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  transition: 0.8s;
+}
+
+.leon_background::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+}
+
+img.leon {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background-size: cover;
+  z-index: 1;
+  transform: scale(1.2);
+}
+
+img.baio_logo {
+  position: absolute;
+  top: 290px;
+  right: 0;
+  left: 0;
+  height: 110%;
+  z-index: 2;
+}
+
+img.leon img .baio_logo .leon_background:hover {
+  width: 11%;
+}
+
+.survivor_B {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 47%;
+  height: 75%;
+  background: yellow;
+  border: solid 1px #ccc;
+  margin-right: 3%;
+  overflow: hidden;
+}
+
+.cheryl_background {
+  background: url(https://playguilds.com/wp-content/uploads/2020/08/%E3%83%9E%E3%83%83%E3%83%97%E6%8C%87%E5%AE%9A%E3%82%AA%E3%83%95%E3%82%A1%E3%83%AA%E3%83%B3%E3%82%B0%E4%B8%80%E8%A6%A7-1024x576.jpg) center no-repeat;
+  position: relative;
+  width: 500%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  transition: 0.8s;
+}
+
+.cheryl_background::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+}
+
+.cheryl {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 100%;
+  background-size: cover;
+  z-index: 1;
+}
+
+.silent_hill_logo {
+  position: absolute;
+  top: 290px;
+  right: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.character_list {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: green;
+}
+
+.character_list_wraaper {
+  position: relative;
+  width: 100%;
+  height: 20%;
+  background: oldlace;
+  opacity: 0.3;
 }
 /*# sourceMappingURL=section_01.css.map */

@@ -2,11 +2,16 @@
 
 let $MAIN_SLID_ARIA = document.getElementById('MAIN_SLID_ARIA');
 let $main_Aria = document.getElementById('main_Aria');
+let $main_Aria_480px = document.getElementById('main_Aria_480px');
 let $MAIN_DELETE = document.getElementById('MAIN_DELETE');
 let $hedar_SUB = document.getElementById('hedar_SUB');
 let $TEST = document.getElementById('TEST');
 let $target_Platformmenus = document.getElementById('target_Platformmenus');
 let $target_efect1 = document.getElementById('target_efect1');
+let $Target_Leon = document.getElementById('Target_Leon')
+
+
+
 let $slidshow_IDs = {
     1: document.getElementById('SLID_SHOW1'), 
     2: document.getElementById('SLID_SHOW2'),
@@ -31,23 +36,10 @@ const test_menu_action = function(){
 
 
 
-window.addEventListener('scroll', (a)=>{ 
-    let $target_heigtUp = document.getElementById('heigt_up');
 
-    let $elm = document.querySelectorAll('#target_Platformmenus li');
-        let target = $target_efect1 .getBoundingClientRect()
-        let target_top = target.top
 
-       if(this.scrollY  > target_top ) {
-        $elm.forEach(item => item.classList.add("scale-in-ver-center","blink-2"))
-        $target_heigtUp.style.height = '53%';
-    }else if(this.scrollY < target_top ){
-        $elm.forEach(item => item.classList.remove("scale-in-ver-center","blink-2"))
-        $target_heigtUp.style.height = '50%';
-    }
-    
-    
-},false);
+
+
 
 
 
@@ -82,24 +74,108 @@ const create_main = function(){
         
     }
 
+}
+
+let paused;
+let main_animation =   
+  setInterval(() => { 
+    if(paused == false){
+        // console.log('停止');
+        return;
+    }else if(paused == true){
+        // console.log('開始');
+    }
+    slidshow_CountUp();
+
+        switch(slid_count){
+            case 5:
+        document.getElementById('SLID_SHOW1').classList.add('text-blur-out','vibrate-1');
+        break;
+            case 10:
+        document.getElementById('SLID_SHOW2').classList.add('text-blur-out');
+        break;
+            case 15:
+        document.getElementById('SLID_SHOW3').classList.add('text-blur-out');
+        break;
+            case 20:
+    document.getElementById('SLID_SHOW4').classList.remove('text-blur-out');
+        document.getElementById('SLID_SHOW1').classList.remove('text-blur-out');
+        document.getElementById('SLID_SHOW2').classList.remove('text-blur-out');
+        document.getElementById('SLID_SHOW3').classList.remove('text-blur-out');
+            slid_count = 0;
+        break;
+
+        }
+        },1000)
+
+
+let $section01_target = document.getElementById('section01_target');
+let section01_target_potision = $section01_target.getBoundingClientRect()
+let target_section01_top =  section01_target_potision.top
+
+
+window.addEventListener('scroll', (a)=>{ 
+
+ 
+    let $target_heigtUp = document.getElementById('heigt_up');
+
+// メインのアニメーションがターゲットの高さまでスクロールした場合に発火
+    let $elm = document.querySelectorAll('#target_Platformmenus li');
+        let target = $target_efect1 .getBoundingClientRect()
+        let target_top = target.top
+       if(this.scrollY  > target_top ) {
+        $elm.forEach(item => item.classList.add("scale-in-ver-center","blink-2"))
+        $target_heigtUp.style.height = '53%';
+
+    }else if(this.scrollY < target_top ){
+        $elm.forEach(item => item.classList.remove("scale-in-ver-center","blink-2"))
+        $target_heigtUp.style.height = '50%';
+    }
+   
+    if(this.scrollY > target_section01_top) {
+       
+        // console.log('発火')
+        paused = false;
+       
+    }else if(this.scrollY <  target_section01_top){
+        // console.log('再開')
+        paused = true;
+        setInterval(main_animation )
+    }
+    
+},false);
+
+
+const create_main_480px = function(){
+    let i = 0;
+    let div_tag;
+    
+    for( i =1; i  < 5; i++){
+        div_tag = document.createElement('div');
+        $main_Aria_480px.appendChild(div_tag);
+        div_tag.id = 'SLID_SHOW_480px' + i;
+        div_tag.classList.add('main_slidshow_480px' + i);
+        
+    }
+
     setInterval((time) => { 
-        slidshow_CountUp();
+        slidshow_CountUp()
 
             switch(slid_count){
                 case 5:
-            document.getElementById('SLID_SHOW1').classList.add('text-blur-out','vibrate-1');
+            document.getElementById('SLID_SHOW_480px1').classList.add('text-blur-out','vibrate-1');
             break;
                 case 10:
-            document.getElementById('SLID_SHOW2').classList.add('text-blur-out');
+            document.getElementById('SLID_SHOW_480px2').classList.add('text-blur-out');
             break;
                 case 15:
-            document.getElementById('SLID_SHOW3').classList.add('text-blur-out');
+            document.getElementById('SLID_SHOW_480px3').classList.add('text-blur-out');
             break;
                 case 20:
-        document.getElementById('SLID_SHOW4').classList.remove('text-blur-out');
-            document.getElementById('SLID_SHOW1').classList.remove('text-blur-out');
-            document.getElementById('SLID_SHOW2').classList.remove('text-blur-out');
-            document.getElementById('SLID_SHOW3').classList.remove('text-blur-out');
+        document.getElementById('SLID_SHOW_480px4').classList.remove('text-blur-out');
+            document.getElementById('SLID_SHOW_480px1').classList.remove('text-blur-out');
+            document.getElementById('SLID_SHOW_480px2').classList.remove('text-blur-out');
+            document.getElementById('SLID_SHOW_480px3').classList.remove('text-blur-out');
                 slid_count = 0;
             break;
 
@@ -107,7 +183,14 @@ const create_main = function(){
             },1000)
 }
 
-create_main();
+
+const switchByWith =()=> {
+    if(window.matchMedia('(max-width:480px)').matches){
+        create_main_480px();
+    }else if((window.matchMedia('(min-width:768px)').matches)){
+        create_main();
+    }
+}
 
 
 // const transion_Slidshows = function(){
@@ -145,3 +228,5 @@ $MAIN_DELETE.addEventListener('click', ()=>{
 
 
 // },false);
+window.onload = switchByWith;
+window.onresize = switchByWith;

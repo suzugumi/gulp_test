@@ -2,12 +2,14 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
     <title>Document</title>
     <script src="https://kit.fontawesome.com/e1c828eace.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/small_header.css"  media="all and (max-width:480px)">
+    <link rel="stylesheet" href="./css/480px_main_section_menu.css"  media="all and (max-width:480px)">
     <link rel="stylesheet" href="../P_css/font-awesome.min.css">
     <link rel="stylesheet" href="../P_css/normalize.css">
     <link rel="stylesheet" href="./css/sprite.css">
@@ -38,14 +40,21 @@
             </ul>
         </nav>
     </header>
-        <main  id="main_Aria" class="main_container">
+    <main>
+        <div class="main_480px">
+            <div  id="main_Aria_480px"  class="main_Aria_480px_container">
+        </div>
+        </div>
+    <div class="main">
+    <div  id="main_Aria" class="main_container">
             <!-- <div class="main_slidshow1"></div>
             <div class="main_slidshow2"></div>
             <div class="main_slidshow3"></div>
             <div class="main_slidshow4"></div>
             <div id="scroll_target" class="scroll_target"></div> -->
-        </main>
+        </div>
         <div class="main_rapper_Aria" id="target_efect1">
+
             <div class="main_menu_container">
                 <div class="main_menu1_container">
                     <div class="main_aria_HEIGHTUP" id="heigt_up">
@@ -78,12 +87,47 @@
             </div>
         </div>
     <div  class="main_masagge_container"><span class="main_message">世界で一番死と隣り合わせのかくれんぼにようこそ</span></div>
-        <!-- <section>
-            <div  class="section_container01">
-            
+</div>  
+</main>   
+<section>
+     <div  class="section_container01" id="section01_target">
+            <div class="section_container01_wrapper">
+                <div class="separate_aria_killer_Introduction"></div>
+                <div class="separate_aria_survivor_Introduction"></div>
+                <div class="separate_aria_killer">
+                    <div class="killer_A">
+                     <div class="pig_background"></div>
+                        <img src="https://deadbydaylight.com/static/73d67533529b8ff93725421466fd8f5b/75009/dbd_ch07_saw_logo_shadow_8eced3bafe.webp" alt="" class="saw_logo">
+                            <img src="./images/DBD_Killer_PigMin.png" alt=""  class="pig">
+                    </div>
+                    <div class="killer_B">
+                        <div class="sadako_background"></div>
+                        <img src="https://deadbydaylight.com/static/2738fa84a2543b75bf57737f50eea39d/de856/DBD_Killer_Sadako_only_d334828435.webp" alt="" class="sadako">
+                        <img src="https://deadbydaylight.com/static/1d7104c1d3e9e0ffa01547e753a35a0b/54ac6/dbd_ch23_sadako_logo_shadow_3da0ff3b9f.webp" alt="" class="sadako_logo">
+                    </div>
+                </div>
+                <div class="separate_aria_survivor">
+                    <div class="survivor_A">
+                        <div class="leon_background "  id="Target_Leon"></div>
+                        <img src="https://deadbydaylight.com/static/9756c3a8ceed79cf76cbe28f96fc039f/4a362/DBD_Survivor_Leon_only_83e8e83493.webp" alt="" class="leon">
+                        <img src="https://deadbydaylight.com/static/3125f54e3cff6c7c4f49949e6d612416/95b39/dbd_resident_evil_biohazard_3e1396cbf3.webp" alt="" class="baio_logo">
+                    </div>
+                    <div class="survivor_B">
+                        <div class="cheryl_background"></div>
+                        <img src="https://deadbydaylight.com/static/2efda55012428f36ea64fd987d446cfe/a3edc/DBD_Survivor_Cheryl_only_2b098e322c.webp" alt="" class="cheryl">
+                    <img src="https://deadbydaylight.com/static/361997b479bd09b0766436b29f4d25c0/4fd69/dbd_ch16_silenthill_logo_shadow_82d7674a20.webp" alt="" class="silent_hill_logo">
+                    </div>
             </div>
-        </section> -->
-        <layer name="L1">こんにちわ</layer>
+            <div class="character_list"></div>
+            <div class="separate_Introduction_wraaper"></div>
+            <div class="separate_aria_wraaper"></div>
+            <div class="character_list_wraaper"></div>
+
+        </div>
+</section>
+      
+ 
+            <layer name="L1">こんにちわ</layer>
 
 <button id="TEST">a</button>
 <button id="MAIN_DELETE">b</button>
