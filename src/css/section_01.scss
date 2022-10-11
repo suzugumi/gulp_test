@@ -5,9 +5,9 @@
     background-size: cover;
     width: 100%;
     height: 1300px;
-    position: relative;
+    position: absolute;
     background-attachment: fixed;
-    z-index: 0;
+    
 
 }
 
@@ -19,6 +19,7 @@
     right: 0;
     background: black;
     opacity: 0.8;
+    
 }
 .separate_Introduction_wraaper{
     position: relative;
@@ -260,7 +261,7 @@ img.baio_logo{
     top: 290px;
     right: 0;
     left: 0;
-    height: 110%;
+    width: 100%;
     z-index: 2;
 }
 

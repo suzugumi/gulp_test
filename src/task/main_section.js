@@ -4,43 +4,25 @@ let $MAIN_SLID_ARIA = document.getElementById('MAIN_SLID_ARIA');
 let $main_Aria = document.getElementById('main_Aria');
 let $main_Aria_480px = document.getElementById('main_Aria_480px');
 let $MAIN_DELETE = document.getElementById('MAIN_DELETE');
-let $hedar_SUB = document.getElementById('hedar_SUB');
 let $TEST = document.getElementById('TEST');
 let $target_Platformmenus = document.getElementById('target_Platformmenus');
 let $target_efect1 = document.getElementById('target_efect1');
 let $Target_Leon = document.getElementById('Target_Leon')
-
-
-
+let paused; //一時停止用の真偽値用の箱
+let count = 1;
+let slid_count =0;
 let $slidshow_IDs = {
     1: document.getElementById('SLID_SHOW1'), 
     2: document.getElementById('SLID_SHOW2'),
     3: document.getElementById('SLID_SHOW3'), 
     4: document.getElementById('SLID_SHOW4'), 
 }
-// let $scroll_target = document.getElementById('scroll_target');
-let count = 1;
-let slid_count =0;
-
-// window.addEventListener('scroll', function(Y){
-
-//     let tatget_top =$target_Platformmenus.getBoundingClientRect().top
-//     console.log( tatget_top);  
-
-// })
+// import { scroll_animation_create } from './scroll_animation.js'
 
 const test_menu_action = function(){  
     let $elm = document.querySelectorAll('#target_Platformmenus li');
     $elm.forEach(item => item.classList.add("scale-in-ver-center"))
 }
-
-
-
-
-
-
-
-
 
 
 const slidshow_CountUp = ()  => {
@@ -75,15 +57,12 @@ const create_main = function(){
     }
 
 }
-
-let paused;
 let main_animation =   
   setInterval(() => { 
+    //↓スクロールのターゲットの位置に来たら一時的にメインアニメーションを停止させる
     if(paused == false){
         // console.log('停止');
         return;
-    }else if(paused == true){
-        // console.log('開始');
     }
     slidshow_CountUp();
 
@@ -109,42 +88,63 @@ let main_animation =
         },1000)
 
 
-let $section01_target = document.getElementById('section01_target');
-let section01_target_potision = $section01_target.getBoundingClientRect()
-let target_section01_top =  section01_target_potision.top
+        // scroll_animation_create();
 
-
-window.addEventListener('scroll', (a)=>{ 
-
- 
-    let $target_heigtUp = document.getElementById('heigt_up');
-
-// メインのアニメーションがターゲットの高さまでスクロールした場合に発火
-    let $elm = document.querySelectorAll('#target_Platformmenus li');
-        let target = $target_efect1 .getBoundingClientRect()
-        let target_top = target.top
-       if(this.scrollY  > target_top ) {
-        $elm.forEach(item => item.classList.add("scale-in-ver-center","blink-2"))
-        $target_heigtUp.style.height = '53%';
-
-    }else if(this.scrollY < target_top ){
-        $elm.forEach(item => item.classList.remove("scale-in-ver-center","blink-2"))
-        $target_heigtUp.style.height = '50%';
-    }
-   
-    if(this.scrollY > target_section01_top) {
-       
-        // console.log('発火')
-        paused = false;
-       
-    }else if(this.scrollY <  target_section01_top){
-        // console.log('再開')
-        paused = true;
-        setInterval(main_animation )
-    }
-    
-},false);
-
+            window.addEventListener('scroll', (a)=>{ 
+                //ヘッダーのアニメーションを変更
+                let $header = document.getElementById('header');
+                let $header_elm =  document.getElementById('header_Targert');
+                let target_header = $header_elm.getBoundingClientRect();
+                let target_header_top = target_header.top
+            
+                if(window.scrollY  > target_header_top ){
+                $header.style.position = 'fixed';
+                }else if(window.scrollY  < target_header_top){
+                $header.style.position = 'sticky';
+            
+                }
+            
+             // メインのアニメーションがターゲットの高さまでスクロールした場合に発火
+                    let $target_heigtUp = document.getElementById('heigt_up');
+                    let $elm = document.querySelectorAll('#target_Platformmenus li');
+                    let target = $target_efect1 .getBoundingClientRect()
+                    let target_top = target.top
+                if(window.scrollY  > target_top ) {
+                    $elm.forEach(item => item.classList.add("scale-in-ver-center","blink-2"))
+                    $target_heigtUp.style.height = '53%';
+            
+                }else if(window.scrollY < target_top ){
+                    $elm.forEach(item => item.classList.remove("scale-in-ver-center","blink-2"))
+                    $target_heigtUp.style.height = '50%';
+                }
+            
+            
+            //         let $target_Animation = document.getElementById('target_Animation_Aria');
+            //         let target_Animation_aria = $target_Animation.getBoundingClientRect()
+            //         let target_Animation_top = target_Animation_aria.top
+            
+            // if(this.scrollY < target_Animation_top ){
+            //     $elm.forEach(item => item.classList.add("scale-in-ver-center","blink-2"))
+            // }
+            
+            
+                // メインのアニメーションが一定の高さまでくるとアニメーションを停止・再開
+                    let $section01_target = document.getElementById('section01_target');
+                    let section01_target_potision = $section01_target.getBoundingClientRect()
+                    let target_section01_top =  section01_target_potision.top    
+                if(window.scrollY > target_section01_top) {
+                   
+                    // console.log('発火')
+                    paused = false;
+                   
+                }else if(window.scrollY <  target_section01_top){
+                    // console.log('再開')
+                    paused = true;
+                    setInterval(main_animation )
+                }
+                },false);
+            
+            
 
 const create_main_480px = function(){
     let i = 0;

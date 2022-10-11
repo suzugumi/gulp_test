@@ -26,4 +26,12 @@
 .height101 {
   height: 101%;
 }
+
+.sticky {
+  position: sticky;
+}
+
+.transform_Y-60px {
+  transform: translate(0, -60px);
+}
 /*# sourceMappingURL=JS_part.css.map */

@@ -1,7 +1,14 @@
-const { gulp ,  task  , src, dest , series  ,   watch   , parallel } = require('gulp');
+ let tes =  () =>{
 
-const test =  () => {
-    console.log('変更しました')
+    console.log('読み込み完了')
+
+}  
+let tes2 = console.log('TEST');
+
+
+
+ function mozi(a){
+    console.log(a)
 }
 
-module.exports = test;
+export { tes ,tes2, mozi } 
