@@ -1,6 +1,8 @@
 
 let scroll_animation_create = function(){
 window.addEventListener('scroll', (a)=>{ 
+    let paused; //一時停止用の真偽値用の箱
+
 let $target_Platformmenus = document.getElementById('target_Platformmenus');
 let $target_efect1 = document.getElementById('target_efect1');
     //ヘッダーのアニメーションを変更

@@ -8,8 +8,9 @@ let $TEST = document.getElementById('TEST');
 let $target_Platformmenus = document.getElementById('target_Platformmenus');
 let $target_efect1 = document.getElementById('target_efect1');
 let $Target_Leon = document.getElementById('Target_Leon')
-let paused; //一時停止用の真偽値用の箱
 let count = 1;
+let sub_count = 1;
+let paused; //一時停止用の真偽値用の箱
 let slid_count =0;
 let $slidshow_IDs = {
     1: document.getElementById('SLID_SHOW1'), 
@@ -88,18 +89,18 @@ let main_animation =
         },1000)
 
 
-        // scroll_animation_create();
 
             window.addEventListener('scroll', (a)=>{ 
+                let Ypotion = Math.floor(window.scrollY);
                 //ヘッダーのアニメーションを変更
                 let $header = document.getElementById('header');
                 let $header_elm =  document.getElementById('header_Targert');
                 let target_header = $header_elm.getBoundingClientRect();
                 let target_header_top = target_header.top
             
-                if(window.scrollY  > target_header_top ){
+                if(Ypotion > Math.floor(target_header_top) ){
                 $header.style.position = 'fixed';
-                }else if(window.scrollY  < target_header_top){
+                }else if(Ypotion  < target_header_top){
                 $header.style.position = 'sticky';
             
                 }
@@ -109,11 +110,11 @@ let main_animation =
                     let $elm = document.querySelectorAll('#target_Platformmenus li');
                     let target = $target_efect1 .getBoundingClientRect()
                     let target_top = target.top
-                if(window.scrollY  > target_top ) {
+                if(Ypotion > target_top ) {
                     $elm.forEach(item => item.classList.add("scale-in-ver-center","blink-2"))
                     $target_heigtUp.style.height = '53%';
             
-                }else if(window.scrollY < target_top ){
+                }else if(Ypotion < target_top ){
                     $elm.forEach(item => item.classList.remove("scale-in-ver-center","blink-2"))
                     $target_heigtUp.style.height = '50%';
                 }
@@ -132,18 +133,49 @@ let main_animation =
                     let $section01_target = document.getElementById('section01_target');
                     let section01_target_potision = $section01_target.getBoundingClientRect()
                     let target_section01_top =  section01_target_potision.top    
-                if(window.scrollY > target_section01_top) {
-                   
+                if(Ypotion > target_section01_top) {
                     // console.log('発火')
                     paused = false;
                    
-                }else if(window.scrollY <  target_section01_top){
+                }else if(Ypotion <  target_section01_top){
                     // console.log('再開')
                     paused = true;
                     setInterval(main_animation )
                 }
+
+                //セパレートキラーエリアの背景画像をスクロールに合わせてアニメーション
+                    let $killer_Aria_target = document.getElementById('Taeget_background')
+                    let $survivor_Aria_target = document.getElementById('survivor_background');
+
+                    //もしもスクロールの高さが１６００より値が大きかったら背景画像を下に移動させる。
+                        if( Ypotion > 1600) {
+                            count++
+                            sub_count--
+                            $killer_Aria_target.style.transform = 'translateY('+ count + 'px)';
+                            $survivor_Aria_target.style.transform = 'translateY('+ sub_count + 'px)';
+                            console.log("発火");
+                    //もしももしもスクロールの高さが２１００に来たら背景画像を元の位置にリセット
+                    //このif文は無限に背景画像を下にさげてしまう不具合を修正するためにあります。
+                            if(Ypotion  > 2100){
+                                count = 0;
+                                sub_count =0;
+                                $killer_Aria_target.style.transform = 'translateY('+ count + 'px)'
+                                $survivor_Aria_target.style.transform = 'translateY('+ sub_count + 'px)'
+
+                            }
+                 //もしもスクロールの高さが１６００より値が小さかったら背景画像を元の位置に戻す。
+                        }else if(Ypotion  < 1620){                         
+                               $killer_Aria_target.style.transform = 'translateY(0)';
+                               $survivor_Aria_target.style.transform = 'translateY(0)';
+                               count = 0;
+                               sub_count =0;
+
+                    }
+
+  
+                
+
                 },false);
-            
             
 
 const create_main_480px = function(){
