@@ -8,8 +8,11 @@ let $TEST = document.getElementById('TEST');
 let $target_Platformmenus = document.getElementById('target_Platformmenus');
 let $target_efect1 = document.getElementById('target_efect1');
 let $Target_Leon = document.getElementById('Target_Leon')
+let $killer_Aria_Button = document.getElementById('killer_Aria_Button');
+let $survivor_Aria_Button = document.getElementById('survivor_Aria_Button');
 let count = 1;
 let sub_count = 1;
+let suvivor_count = 0;
 let paused; //一時停止用の真偽値用の箱
 let slid_count =0;
 let $slidshow_IDs = {
@@ -32,11 +35,12 @@ const slidshow_CountUp = ()  => {
 
 };
 
+
 const create_main = function(){
     let i = 0;
     let a_tag;
     let div_tag;
-    let url = new Array();
+    let url 
      url = { 
         1:'https://twitter.com/home',
         2:'https://www.amazon.co.jp/gp/cart/view.html?ref_=nav_cart',
@@ -45,6 +49,7 @@ const create_main = function(){
     };
     
     for( i =1; i  < 5; i++){
+
         div_tag = document.createElement('div');
         $main_Aria.appendChild(div_tag);
         div_tag.id = 'SLID_SHOW' + i;
@@ -223,16 +228,106 @@ const switchByWith =()=> {
         create_main();
     }
 }
+let killer_TARGET_ID = document.getElementById('kilA_LIST');
+
+$killer_Aria_Button.addEventListener('click',function(){
+    console.log(suvivor_count)
+   let $kil = document.getElementById('killer_aria_TARGET');
+   let $suv = document.getElementById('survivor_aria_TARGET');
+   let $PIG = document.getElementById('PIG');
+   let $SADAKO = document.getElementById('SADAKO');
+   let $kil_2 = document.getElementById('killer_aria_TARGET2');
+   let $suv_2 = document.getElementById('survivor_aria_TARGET2');
+   let $mobs_text1 = document.querySelector('.mobs_text1');
+   let $killer_Aria_target = document.getElementById('Taeget_background')
+   
+
+   //トグル
+   $mobs_text1.classList.toggle('NONE');
+   $PIG.classList.toggle('NONE');
+   $SADAKO.classList.toggle('NONE');
+   $killer_Aria_target.classList.toggle('NONE');
+
+//    let $div;
+//    $div = document.createElement('div');
+//    $div.id = 'kilA_LIST'  
+//   $div.classList.add('kilA_Aria_wrraper');
+//   $kil_2.appendChild($div);
+//   let test = document.querySelectorAll('#killer_aria_TARGET2 div')
 
 
-// const transion_Slidshows = function(){
+   if(suvivor_count < 1){
+    $killer_Aria_Button.textContent = "戻る"
+    $kil.style.width = '119%';
+    $kil_2.style.width = '119%';
+    $suv.style.width = '0%';
+    $suv_2.style.width = '0%';
 
-//     setTimeout(function(){
-//      return   $slidshow_IDs[1].classList.add('text-blur-out');
-//     }, 3000)
-    
-// }
-// transion_Slidshows();
+
+
+    // console.log($kil_2)
+
+    suvivor_count = 1
+
+   }else if(suvivor_count < 2){
+    $killer_Aria_Button.textContent = "詳しく見る"
+    $kil.style.width = '50%';
+    $suv.style.width = '50%';
+    $kil_2.style.width = '50%';
+    $suv_2.style.width = '50%';
+
+    suvivor_count = 0;
+   }
+
+  
+});
+
+
+
+
+
+$survivor_Aria_Button.addEventListener('click',function(){
+    console.log(suvivor_count)
+   let $suv = document.getElementById('survivor_aria_TARGET');
+   let $kil = document.getElementById('killer_aria_TARGET');
+   let $LEON = document.getElementById('LEON');
+   let $CHERYL = document.getElementById('CHERYL');
+   let $suv_2 = document.getElementById('survivor_aria_TARGET2');
+   let $kil_2 = document.getElementById('killer_aria_TARGET2');
+   let $mobs_text1 = document.querySelector('.mobs_text1');
+   let $survivor_Aria_target = document.getElementById('survivor_background');
+
+
+   //トグル
+   $mobs_text1.classList.toggle('NONE');
+   $LEON.classList.toggle('NONE');
+   $CHERYL.classList.toggle('NONE');
+   $survivor_Aria_target.classList.toggle('NONE');
+
+   if(suvivor_count < 1){
+
+    $suv.style.width = '119%';
+    $suv_2.style.width = '119%';
+    $killer_Aria_Button.textContent = "戻る"
+    $kil.style.width = '0%';
+    $kil_2.style.width = '0%';
+
+    suvivor_count = 1;
+
+  
+   }else if(suvivor_count < 2){
+    $survivor_Aria_Button.textContent = "詳しく見る"
+    $kil.style.width = '50%';
+    $suv.style.width = '50%';
+    $kil_2.style.width = '50%';
+    $suv_2.style.width = '50%';
+
+    suvivor_count = 0;
+   }
+  
+});
+
+
 
 $MAIN_DELETE.addEventListener('click', ()=>{
     let i = 0;
@@ -252,13 +347,6 @@ $MAIN_DELETE.addEventListener('click', ()=>{
 },false);
 
 
-// $MAIN_SLID_ARIA.addEventListener('click', ()=>{
-//     let i = 0;
-//     for(i= 1; i < 5; i++){
-//         console.log(url.i);
-//     }
 
-
-// },false);
 window.onload = switchByWith;
 window.onresize = switchByWith;

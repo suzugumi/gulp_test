@@ -22,4 +22,12 @@ body {
   position: relative;
   z-index: 100;
 }
+
+.WIDTH0 {
+  width: 0%;
+}
+
+.WIDTH100 {
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */
