@@ -1,9 +1,16 @@
 @charset "UTF-8";
+.section1 {
+  width: 100%;
+  height: 1300px;
+  position: relative;
+  clear: both;
+}
+
 .section_container01 {
   background: url("../images/section01_backgroundMin.jpeg");
   background-size: cover;
   width: 100%;
-  height: 1300px;
+  height: 100%;
   position: absolute;
   background-attachment: fixed;
 }
@@ -402,15 +409,6 @@ img.leon img .baio_logo .leon_background:hover {
   z-index: 2;
 }
 
-.character_list {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20%;
-  background: green;
-}
-
 .character_list_wraaper {
   position: relative;
   width: 100%;
@@ -448,11 +446,31 @@ img.leon img .baio_logo .leon_background:hover {
   transition: 0.8s;
 }
 
-.kilA_Aria_wrraper {
+.mobs_text1_aria {
   position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 5;
-  background: green;
+  height: 20%;
+}
+
+.mobs_warrper {
+  display: flex;
+  justify-content: center;
+}
+
+.mobs_warrper span {
+  position: absolute;
+  top: 30px;
+  display: block;
+  font-size: 40px;
+}
+
+.mobs_warrper button {
+  position: absolute;
+  top: 100px;
+  display: block;
+  text-align: center;
+  font-size: 40px;
 }
 /*# sourceMappingURL=section_01.css.map */

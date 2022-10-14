@@ -1,0 +1,59 @@
+//JS生成用
+.kilA_Aria_wrraper{
+    position: absolute;
+
+    width: 89%;
+    height: 100%;
+    z-index: 5;
+    overflow: hidden;
+    // background: green;
+}
+
+
+.separete_kileer_animationJS  {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:center;
+	list-style: none;
+	padding-left: 0;
+
+}
+
+.killer_list {
+  
+    width: 210px;
+    height: 210px;
+    overflow: hidden;
+
+    // margin-top: 10px;
+}
+
+
+
+.Survivor_Aria_wrraper{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    overflow: hidden;
+    // background: green;
+
+}
+.separete_Survivor_animationJS  {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:right;
+	list-style: none;
+	padding-left: 0;
+
+}
+
+.Survivor_list {
+    width: 190px;
+    height: 190px;
+    overflow: hidden;
+align-items: flex-end;
+    // margin-top: 10px;
+}
+
