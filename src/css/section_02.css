@@ -1,7 +1,14 @@
 .section_container02 {
+  clear: both;
   position: relative;
   width: 100%;
-  height: 5000px;
+  height: 500px;
   background: green;
+}
+
+.section_container02 img {
+  width: 50%;
+  height: 100%;
+  position: absolute;
 }
 /*# sourceMappingURL=section_02.css.map */

@@ -4,16 +4,18 @@
     height: 1300px;
     position: relative;
     clear:both;
-
+    
 }
 
 
 .section_container01{
-    background: url("../images/section01_backgroundMin.jpeg");
-    background-size: cover;
+
+
     width: 100%;
     height:  100%;
 position: absolute;
+background: url("../images/section01_backgroundMin.jpeg");
+background-size: cover;
     background-attachment: fixed;
 
     
@@ -21,18 +23,17 @@ position: absolute;
 }
 
 .section_container01_wrapper{
+    
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    background: black;
-    opacity: 0.8;
     
 }
 .separate_Introduction_wraaper{
     position: relative;
-    
+
     width: 100%;
     height: 20%;
     // background: yellow;
@@ -47,7 +48,7 @@ position: absolute;
     right: 0;
     width: 50%;
     height: 20%;
-    background:dodgerblue;
+    background: rgba(7, 143, 255, 0.8);
     transform: translate(2%,0);
     transition: 0.8s;
 
@@ -62,7 +63,6 @@ position: absolute;
     left: 2%;
     top: 10%;
     bottom: 5%;
-    background:dodgerblue;
 
     overflow: hidden;
 }
@@ -114,7 +114,7 @@ position: absolute;
     left: 0;
     width: 50%;
     height: 20%;
-    background:brown;
+  background: rgba(255, 23, 23, 0.8);
     transform: translate(-2%,0);
     transition: 0.8s;
 
@@ -187,6 +187,8 @@ position: absolute;
     transition: 0.8s;
 
 }
+
+
 
 .separate_aria_killer_background{
     position: absolute;
@@ -383,6 +385,7 @@ img.leon{
     width: 100%; 
     background-size: cover;
     z-index: 1;
+
     transform: scale(1.2);
 
 }
@@ -499,6 +502,18 @@ height: 20%;
 
 }
 
+.marigin_block{
+    clear: both;
+
+    width: 100%;
+    height: 200px;
+    position: relative;
+
+    background: black;
+
+
+}
+
 
 
 .mobs_text1{
@@ -519,8 +534,7 @@ height: 20%;
     left: 0;
     width: 100%;
     height: 20%;
-    // background: green;
-
+background: black;
 }
 
 .mobs_warrper{
@@ -550,4 +564,3 @@ display: block;
     text-align:center;
         font-size: 40px;
     }
-    

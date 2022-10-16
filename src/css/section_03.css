@@ -1,0 +1,168 @@
+.section_container03 {
+  clear: both;
+  position: relative;
+  width: 100%;
+  height: 1300px;
+  background: url("https://deadbydaylight.com/static/a5cdc5db3804f817df112184c81f5ead/663bd/dbd-gallery-background.webp");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.section03_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.5);
+}
+
+.carousel_aria_A {
+  position: absolute;
+  width: 65%;
+  top: 150px;
+  left: 80px;
+  bottom: 150px;
+  background: rgba(10, 10, 10, 0.5);
+}
+
+.carousel_main {
+  position: absolute;
+  width: 850px;
+  height: 550px;
+  top: 250px;
+  right: 150px;
+  background: rgba(10, 10, 10, 0.5);
+}
+
+.main_border_line_01 {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 50px;
+  height: 50px;
+  background: red;
+}
+
+.main_border_line_02 {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 50px;
+  height: 50px;
+  background: red;
+}
+
+.carousel_main img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  position: absolute;
+  z-index: 2;
+}
+
+.carousel_aria_B {
+  position: absolute;
+  width: 25%;
+  top: 150px;
+  right: 80px;
+  bottom: 150px;
+  background: rgba(10, 10, 10, 0.5);
+}
+
+.carousel_slider {
+  position: absolute;
+  width: 180px;
+  height: 150px;
+  top: 450px;
+  right: 150px;
+  background: rgba(10, 10, 10, 0.5);
+  z-index: 0;
+}
+
+.sub_border_line_01 {
+  left: -3px;
+  top: -3px;
+  bottom: -3px;
+  width: 30px;
+  height: 102;
+  background: red;
+  position: absolute;
+}
+
+.sub_border_line_02 {
+  right: -3px;
+  top: -3px;
+  bottom: -3px;
+  width: 30px;
+  height: 102;
+  background: red;
+  position: absolute;
+}
+
+.carousel_slider_imgs {
+  overflow: hidden;
+}
+
+.carousel_slider_item0 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  z-index: 1;
+  transform: translate(0, 320px);
+}
+
+.carousel_slider_item1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  z-index: 2;
+  transform: translate(0, 160px);
+}
+
+.carousel_slider_item2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  z-index: 3;
+  transform: translate(0, -320px);
+}
+
+.carousel_slider_item3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  z-index: 4;
+  transform: translate(0, -160px);
+}
+
+.carousel_slider_item4 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  z-index: 5;
+}
+/*# sourceMappingURL=section_03.css.map */
