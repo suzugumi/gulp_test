@@ -7,7 +7,21 @@
     visibility: hidden;
   
   }
-  
+
+  .TEST{
+    transform:translateY(-100%);
+  }
+
+  .TEST2{
+    transform:translateY(-200%);
+  }
+
+  .TEST3{
+    transform:translateY(100%);
+  }
+  .TEST4{
+    transform:translate3d(0, 200%, 0);
+  }
   .Revival{
     visibility:visible;
   }
@@ -42,6 +56,8 @@
 	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
+
+
 
 
 /* ----------------------------------------------

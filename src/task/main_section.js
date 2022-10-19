@@ -382,76 +382,148 @@ let $main_border01;
 let $main_border02;
 let $sub_border01;
 let $sub_border02;
+let $carousel_slider_wrraper;
+let $carousel_slider_wrraper2;
 let $main_img 
 let $sub_img;
-
 $main_border01 = document.createElement('div');
 $main_border02 = document.createElement('div');
 
+let $curosel_main_imgs = document.getElementsByClassName('curosel_main_imgs');
+let $main_border_line_01 = document.getElementsByClassName('main_border_line_01');
+let $main_border_line_02 = document.getElementsByClassName('main_border_line_02');
 
+//メインの画像エリアを生成
 $main_border01.classList.add('main_border_line_01');
 $main_border02.classList.add('main_border_line_02');
+$main_img = document.createElement('img');
+$main_img.src = $curosel_item[0];
+ $main_img.className = 'curosel_main_imgs';
+
+$Carousel_Main.appendChild($main_img);
+$Carousel_Main.appendChild(    $main_border01 );
+$Carousel_Main.appendChild(    $main_border02 );
+
 
 // let $main_border_line_01 = $div.classList.add('main_border_line_01');
 // let $main_border_line_02 = $div.classList.add('main_border_line_02');
 
 for( let i= 0; i  <  $curosel_item.length; i++){
+    //サブ画像
     $sub_border01 = document.createElement('div');
     $sub_border02 = document.createElement('div');
+    $carousel_slider_wrraper = document.createElement('div');
+    $carousel_slider_wrraper2 = document.createElement('div');
     $sub_border01.classList.add('sub_border_line_01');
     $sub_border02.classList.add('sub_border_line_02');
+    $carousel_slider_wrraper.classList.add('carousel_slider_wrraper');
+    $carousel_slider_wrraper2.classList.add('carousel_slider_wrraper2');
     $sub_img = document.createElement('img');
     $sub_img.src = $curosel_item[i];
     $sub_img.id = 'curosel_item' + i;
-    $main_img = document.createElement('img');
-    $main_img.src = $curosel_item[i];
-    $main_img.className = 'curosel_main_imgs';
 
-    $sub_img.className = 'carousel_slider_imgs';
-    $sub_img.classList.add('carousel_slider_item' + i);
+  
+    $sub_img.className = 'Y-' +i;
+    $sub_img.classList.add('carousel_slider_item' + i, 'carousel_slider_imgs');
 
-    $Carousel_Slider.appendChild(  $sub_border01);
-    $Carousel_Slider.appendChild(  $sub_border02);
-    $Carousel_Slider.appendChild( $sub_img );
-    $Carousel_Main.appendChild($main_img);
 
+    $carousel_slider_wrraper.appendChild( $sub_img );
+    $carousel_slider_wrraper.appendChild(  $sub_border01);
+    $carousel_slider_wrraper.appendChild(  $sub_border02);
+    $Carousel_Slider.appendChild( $carousel_slider_wrraper);
 }
 
+  //メイン画像
 
-$Carousel_Main.appendChild(    $main_border01 );
-$Carousel_Main.appendChild(    $main_border02 );
+
+
 
 let $target_imgs = document.getElementsByClassName('carousel_slider_imgs');
-let $curosel_main_imgs = document.getElementsByClassName('curosel_main_imgs');
-let $main_border_line_01 = document.getElementsByClassName('main_border_line_01');
-let $main_border_line_02 = document.getElementsByClassName('main_border_line_02');
+let $carousel_slider_wrapper = document.getElementsByClassName('carousel_slider_wrraper')
+let $carousel_target = { 
+    0: document.getElementById('curosel_item0'),
+    1: document.getElementById('curosel_item1'),
+    2: document.getElementById('curosel_item2'),
+    3: document.getElementById('curosel_item3'),
+    4: document.getElementById('curosel_item4'),
+    }
+
+//     $carousel_target[1].addEventListener('click',function(){   
+//         $carousel_target[0].classList.add('TEST2')
+//         $carousel_target[2].classList.add('TEST2')
+//         $carousel_target[3].classList.add('TEST2')
+//         $carousel_target[4].classList.add('TEST2')
+//  });
 
 for(let i = 0; i < $target_imgs.length; i++){
-    $curosel_main_imgs[i].addEventListener('click', function(e){
+
+    let target_top = $target_imgs[i].getBoundingClientRect().top
+    let parent_top  = $Carousel_Slider.getBoundingClientRect().top 
+
+    $target_imgs[i].addEventListener('click', function(e){
         console.log(`これは${i}番目です`)
+                    console.log(  $target_imgs.item(i))
+
+        $main_img.src = $curosel_item[i]
+
+        console.log(  $target_imgs[i].getBoundingClientRect().top )
+     
+        if(  target_top == parent_top ) { 
+            console.log('一緒です')
+        }else if(  target_top - parent_top <= 150){
+            console.log( target_top - parent_top)
+            console.log( target_top + ':' + parent_top)
+            $carousel_target[0].classList.add('TEST')
+            $carousel_target[1].classList.add('TEST')
+            $carousel_target[2].classList.add('TEST')
+            $carousel_target[3].classList.add('TEST')
+            $carousel_target[4].classList.add('TEST')
+
+        }else if(  target_top - parent_top >= 300){
+            console.log( target_top - parent_top)
+            console.log( target_top + ':' + parent_top)
+            $carousel_target[0].classList.add('TEST2')
+            $carousel_target[1].classList.add('TEST2')
+            $carousel_target[2].classList.add('TEST2')
+            $carousel_target[3].classList.add('TEST2')
+            $carousel_target[4].classList.add('TEST2')
+
+        }else if(  target_top - parent_top >= 150){
+            console.log( target_top - parent_top)
+            console.log( target_top + ':' + parent_top)
+            $carousel_target[0].classList.add('TEST3')
+            $carousel_target[1].classList.add('TEST3')
+            $carousel_target[2].classList.add('TEST3')
+            $carousel_target[3].classList.add('TEST3')
+            $carousel_target[4].classList.add('TEST3')
+
+        }else if(  target_top - parent_top <= 300){
+            console.log( target_top - parent_top)
+            console.log( target_top + ':' + parent_top)
+            $carousel_target[0].classList.add('TEST4')
+            $carousel_target[1].classList.add('TEST4')
+            $carousel_target[2].classList.add('TEST4')
+            $carousel_target[3].classList.add('TEST4')
+            $carousel_target[4].classList.add('TEST4')
+        }
+     
     });
          
 }
 
 
 
+// for(let i = 0; i < $curosel_main_imgs.length; i++){
+//     $curosel_main_imgs[i].addEventListener('click', function(e){
+//         console.log(`これは${i}番目です`)
+//         console.log(     $curosel_main_imgs[i].getBoundingClientRect().top )
+//     });
+         
+// }
 
-$MAIN_DELETE.addEventListener('click', ()=>{
-    let i = 0;
-    let target_Id;
-    target_Id   = document.getElementById('SLID_SHOW' + count);
-    target_Id.tyles.display = 'none';
-    // for(i =1; i < 5; i++){
-    //     target_Id   = document.getElementById('SLID_SHOW' + i);
-    //     target_Id.classList.remove('main_slidshow' + i);
-    // }
 
-    // div_tag.classList.add('NONE');
-    // console.log(div_tag);
-    console.log(target_Id);
-    count ++
 
-},false);
+
 
 
 
