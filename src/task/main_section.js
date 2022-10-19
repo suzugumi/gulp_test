@@ -10,8 +10,6 @@ let $target_efect1 = document.getElementById('target_efect1');
 let $Target_Leon = document.getElementById('Target_Leon')
 let $killer_Aria_Button = document.getElementById('killer_Aria_Button');
 let $survivor_Aria_Button = document.getElementById('survivor_Aria_Button');
-let $Carousel_Main = document.getElementById('Carousel_Main');
-let $Carousel_Slider = document.getElementById('Carousel_Slider');
 let count = 1;
 let sub_count = 1;
 let DBD_count = 0;
@@ -377,7 +375,8 @@ $survivor_Aria_Button.addEventListener('click',function(){
 
 
 
-
+let $Carousel_Main = document.getElementById('Carousel_Main');
+let $Carousel_Slider = document.getElementById('Carousel_Slider');
 let $main_border01;
 let $main_border02;
 let $sub_border01;
@@ -433,7 +432,6 @@ for( let i= 0; i  <  $curosel_item.length; i++){
     $Carousel_Slider.appendChild( $carousel_slider_wrraper);
 }
 
-  //メイン画像
 
 
 
@@ -467,6 +465,8 @@ for(let i = 0; i < $target_imgs.length; i++){
         $main_img.src = $curosel_item[i]
 
         console.log(  $target_imgs[i].getBoundingClientRect().top )
+
+        
      
         if(  target_top == parent_top ) { 
             console.log('一緒です')
@@ -488,7 +488,7 @@ for(let i = 0; i < $target_imgs.length; i++){
             $carousel_target[3].classList.add('TEST2')
             $carousel_target[4].classList.add('TEST2')
 
-        }else if(  target_top - parent_top >= 150){
+        }else if(  target_top + parent_top >= 150){
             console.log( target_top - parent_top)
             console.log( target_top + ':' + parent_top)
             $carousel_target[0].classList.add('TEST3')
@@ -497,7 +497,7 @@ for(let i = 0; i < $target_imgs.length; i++){
             $carousel_target[3].classList.add('TEST3')
             $carousel_target[4].classList.add('TEST3')
 
-        }else if(  target_top - parent_top <= 300){
+        }else if(  target_top + parent_top <= 300){
             console.log( target_top - parent_top)
             console.log( target_top + ':' + parent_top)
             $carousel_target[0].classList.add('TEST4')

@@ -76,7 +76,6 @@
   width: 100%;
   height: 75%;
   overflow: hidden;
-  background: blue;
   bottom: 10%;
 }
 
@@ -190,7 +189,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: blue;
   position: absolute;
 }
 /*# sourceMappingURL=section_03.css.map */

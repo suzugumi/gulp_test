@@ -46,11 +46,11 @@ cb()
 const server = (cb) => {
   browserSync.init({
     server: {
-        baseDir: "./src",
+        baseDir: "./",
         index : 'index.html'
     }
 });
-watch(["./src/index.html",src_P.scss,src_P.task],{ usePolling: true }, Sass).on('change', browserSync.reload);
+watch(["./src/index.html","./src/index.html","./index.html",src_P.scss,src_P.task],{ usePolling: true }, Sass).on('change', browserSync.reload);
 }
 
 

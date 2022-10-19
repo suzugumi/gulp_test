@@ -1,0 +1,99 @@
+.section_container04 {
+  width: 100%;
+  height: 2000px;
+  position: relative;
+}
+
+.section_container_A {
+  position: absolute;
+  height: 100%;
+  left: 13%;
+  right: 13%;
+  background: rgba(8, 107, 255, 0.5);
+}
+
+.section_container_A h2 {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 120px;
+  margin-bottom: 30px;
+}
+
+.section_container_A span {
+  font-size: 80px;
+}
+
+.section04_rigt_aria {
+  position: relative;
+  width: 48%;
+  height: 60%;
+  background: red;
+  overflow: hidden;
+  float: right;
+}
+
+.section04_right_aria1 {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  background: purple;
+  overflow: hidden;
+}
+
+.section04_right_aria2 {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  background: greenyellow;
+  overflow: hidden;
+}
+
+.section04_left_aria {
+  position: relative;
+  width: 48%;
+  height: 60%;
+  background: yellow;
+  overflow: hidden;
+}
+
+.section04_left_aria1 {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 60%;
+  background: green;
+  overflow: hidden;
+}
+
+.section04_left_img {
+  position: absolute;
+  transition: all 0.15s ease;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 99%;
+  height: 99%;
+}
+
+.section04_left_img:hover {
+  transition: all 0.3s ease;
+  border: solid 1px orange;
+}
+
+.section04_left_aria2 {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 40%;
+  background: pink;
+}
+
+.tes {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: orange;
+}
+/*# sourceMappingURL=section_04.css.map */
