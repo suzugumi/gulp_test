@@ -46,7 +46,7 @@ cb()
 const server = (cb) => {
   browserSync.init({
     server: {
-        baseDir: "./",
+        baseDir: "./src",
         index : 'index.html'
     }
 });
